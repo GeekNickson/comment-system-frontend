@@ -1,0 +1,11 @@
+<main>
+  <section class="comments">
+    <div *ngFor="let comment of comments; index as i">
+      <app-comment
+        [comment]="comment"
+        [index]="i"
+        (commentDeletedEvent)="removeComment($event)"
+      ></app-comment>
+    </div>
+  </section>
+</main>
