@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   private getComments(): void {
     this.commentService
       .getAll()
-      .subscribe((response: Comment[]) => (this.comments = response));
+      .subscribe((response: Comment[]) => console.log(response));
   }
 
   public removeComment(index: number) {

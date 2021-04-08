@@ -1,11 +1,19 @@
-<main>
-  <section class="comments">
-    <div *ngFor="let comment of comments; index as i">
-      <app-comment
-        [comment]="comment"
-        [index]="i"
-        (commentDeletedEvent)="removeComment($event)"
-      ></app-comment>
-    </div>
-  </section>
-</main>
+<section class="app">
+  <header>
+    <h1>Happy Comments</h1>
+  </header>
+  <main>
+    <section class="new-comment">
+      <app-add-comment></app-add-comment>
+    </section>
+    <section class="comments">
+      <div *ngFor="let comment of comments; index as i">
+        <app-comment
+          [comment]="comment"
+          [index]="i"
+          (commentDeletedEvent)="removeComment($event)"
+        ></app-comment>
+      </div>
+    </section>
+  </main>
+</section>

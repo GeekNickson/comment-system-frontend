@@ -1,0 +1,22 @@
+<section>
+  <form [formGroup]="commentForm" (ngSubmit)="createComment()">
+    <textarea
+      formControlName="text"
+      placeholder="Type your comment..."
+    ></textarea>
+    <fieldset>
+      <input type="radio" formControlName="rating" [value]="1" />
+      <input type="radio" formControlName="rating" [value]="2" />
+      <input type="radio" formControlName="rating" [value]="3" />
+      <input type="radio" formControlName="rating" [value]="4" />
+      <input type="radio" formControlName="rating" [value]="5" />
+    </fieldset>
+    <button
+      type="submit"
+      class="btn btn-submit"
+      [disabled]="commentForm.invalid"
+    >
+      Add comment
+    </button>
+  </form>
+</section>
