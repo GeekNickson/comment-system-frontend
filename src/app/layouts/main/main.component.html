@@ -1,12 +1,14 @@
-<section class="app">
+<section class="container">
   <header>
-    <h1>Happy Comments</h1>
+    <h1 class="center-align">Happy Comments</h1>
   </header>
   <main>
-    <section class="new-comment">
-      <app-add-comment></app-add-comment>
+    <section>
+      <app-add-comment
+        (commentAddedEvent)="addComment($event)"
+      ></app-add-comment>
     </section>
-    <section class="comments">
+    <section *ngIf="comments" class="container">
       <div *ngFor="let comment of comments; index as i">
         <app-comment
           [comment]="comment"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CommentService } from 'src/app/comment/comment.service';
 import { Comment } from 'src/app/shared/model/comment.model';
 
@@ -19,7 +20,11 @@ export class MainComponent implements OnInit {
   private getComments(): void {
     this.commentService
       .getAll()
-      .subscribe((response: Comment[]) => console.log(response));
+      .subscribe((response: Comment[]) => (this.comments = response));
+  }
+
+  public addComment(comment: Comment): void {
+    this.comments?.push(comment);
   }
 
   public removeComment(index: number) {

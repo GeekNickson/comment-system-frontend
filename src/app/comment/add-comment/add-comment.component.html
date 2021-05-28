@@ -1,22 +1,53 @@
-<section>
+<section class="container">
   <form [formGroup]="commentForm" (ngSubmit)="createComment()">
-    <textarea
-      formControlName="text"
-      placeholder="Type your comment..."
-    ></textarea>
-    <fieldset>
-      <input type="radio" formControlName="rating" [value]="1" />
-      <input type="radio" formControlName="rating" [value]="2" />
-      <input type="radio" formControlName="rating" [value]="3" />
-      <input type="radio" formControlName="rating" [value]="4" />
-      <input type="radio" formControlName="rating" [value]="5" />
-    </fieldset>
-    <button
-      type="submit"
-      class="btn btn-submit"
-      [disabled]="commentForm.invalid"
-    >
-      Add comment
-    </button>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea
+          class="materialize-textarea"
+          formControlName="text"
+          placeholder="Type your comment..."
+        ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <p class="col s1">
+        <label>
+          <input type="radio" formControlName="rating" value="1" />
+          <span>1</span>
+        </label>
+      </p>
+      <p class="col s1">
+        <label>
+          <input type="radio" formControlName="rating" value="2" />
+          <span>2</span>
+        </label>
+      </p>
+      <p class="col s1">
+        <label>
+          <input type="radio" formControlName="rating" value="3" />
+          <span>3</span>
+        </label>
+      </p>
+      <p class="col s1">
+        <label>
+          <input type="radio" formControlName="rating" value="4" />
+          <span>4</span>
+        </label>
+      </p>
+      <p class="col s1">
+        <label>
+          <input type="radio" formControlName="rating" value="5" />
+          <span>5</span>
+        </label>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col s4 offset-s5">
+        <button type="submit" class="btn" [disabled]="commentForm.invalid">
+          Add comment
+        </button>
+      </div>
+    </div>
   </form>
 </section>

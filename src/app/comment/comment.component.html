@@ -1,6 +1,9 @@
-<article class="comment">
-  <button class="comment-delete-button" (click)="delete()">&times;</button>
-  <div class="comment-text">
-    <p>{{ comment?.text }}</p>
+<article class="col s12 m7">
+  <div class="card min-height-10">
+    <button class="btn right red lighten-1" (click)="delete()">&times;</button>
+    <div class="col s6">
+      <h4 class="center-align">{{ comment?.text }}</h4>
+      <p class="center-align">{{ comment?.rating }}</p>
+    </div>
   </div>
 </article>

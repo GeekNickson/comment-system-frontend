@@ -18,9 +18,6 @@ body {
   width: 100%;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  font-size: 2rem;
-  outline: none;
+.min-height-10 {
+  min-height: 10vh;
 }

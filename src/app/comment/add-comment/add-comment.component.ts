@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Comment } from 'src/app/shared/model/comment.model';
 import { CommentService } from '../comment.service';
@@ -22,6 +22,9 @@ export class AddCommentComponent implements OnInit {
     ]),
   });
 
+  @Output()
+  commentAddedEvent = new EventEmitter<Comment>();
+
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {}
@@ -30,6 +33,6 @@ export class AddCommentComponent implements OnInit {
     const newComment: Comment = this.commentForm.value;
     this.commentService
       .create(newComment)
-      .subscribe((response: Comment) => console.log(response));
+      .subscribe((response: Comment) => this.commentAddedEvent.emit(response));
   }
 }
